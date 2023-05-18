@@ -8,8 +8,8 @@ class GameSprite(sprite.Sprite):
         self.rect.x = player_x
         self.rect.y = player_y
 
-        def reset(self):
-            window.blit(self.image, (self.rect.x, self.rect.y))
+    def reset(self):
+        window.blit(self.image, (self.rect.x, self.rect.y))
 
 
 class Player(GameSprite):
@@ -49,7 +49,7 @@ class Player(GameSprite):
 class Enemy(GameSprite):
     side = "left"
     def __init__(self, player_image, player_x, player_y, size_x, size_y, player_speed):
-        super().__init__(self, player_image, player_x, player_y, size_x, size_y)
+        super().__init__(player_image, player_x, player_y, size_x, size_y)
         self.speed = player_speed
 
     def update(self):
@@ -90,13 +90,12 @@ w2 = GameSprite('platform2_v.png', 370, 100, 50, 400)
 barriers.add(w1)
 barriers.add(w2)
 
-packman = Player('player.png', 5, win_height - 80, 80, 80, 0, 0)
-final_sprite = GameSprite('monster.png', win_width - 85, win_height - 100, 80, 80)
+packman = Player('hero.png', 5, win_height - 80, 80, 80, 0, 0)
+final_sprite = GameSprite('fuel_PNG51.png', win_width - 85, win_height - 100, 80, 80)
 
-monster1 = Enemy('monster.png', win_width - 80, 150, 80, 80, 5)
-monster2 = Enemy('monster.png', win_width - 80, 230, 80, 80, 5)
+monster1 = Enemy('Plants-Vs-Zombies-PNG-Image.png', win_width - 80, 150, 80, 80, 5)
 monsters.add(monster1)
-monsters.add(monster2)
+
 
 finish = False
 
@@ -133,6 +132,7 @@ while run:
         window.fill(back)
         packman.update()
         bullets.update()
+
         packman.reset()
         bullets.draw(window)
         barriers.draw(window)
