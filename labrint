@@ -93,9 +93,12 @@ barriers.add(w2)
 packman = Player('hero.png', 5, win_height - 80, 80, 80, 0, 0)
 final_sprite = GameSprite('fuel_PNG51.png', win_width - 85, win_height - 100, 80, 80)
 
-monster1 = Enemy('Plants-Vs-Zombies-PNG-Image.png', win_width - 80, 150, 80, 80, 5)
+monster1 = Enemy('Plants-Vs-Zombies-PNG-Image.png', win_width - 80, 175, 80, 80, 5)
+monster2 = Enemy('Plants-Vs-Zombies-PNG-Image.png', win_width - 80, 340, 80, 80, 5)
+monster3 = Enemy('Plants-Vs-Zombies-PNG-Image.png', win_width - 80, 1, 80, 80, 5)
 monsters.add(monster1)
-
+monsters.add(monster2)
+monsters.add(monster3)
 
 finish = False
 
