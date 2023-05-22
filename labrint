@@ -62,37 +62,6 @@ class Enemy(GameSprite):
         else:
             self.rect.x += self.speed
 
-class Enemy1(GameSprite):
-    side = "left"
-    def __init__(self, player_image, player_x, player_y, size_x, size_y, player_speed):
-        super().__init__(player_image, player_x, player_y, size_x, size_y)
-        self.speed = player_speed
-
-    def update(self):
-        if self.rect.x <= 420: 
-            self.side = "right"
-        if self.rect.x >= win_width - 50:
-            self.side = "left"
-        if self.side == "left":
-            self.rect.x -= self.speed
-        else:
-            self.rect.x += self.speed
-
-class Enemy2(GameSprite):
-    side = "left"
-    def __init__(self, player_image, player_x, player_y, size_x, size_y, player_speed):
-        super().__init__(player_image, player_x, player_y, size_x, size_y)
-        self.speed = player_speed
-
-    def update(self):
-        if self.rect.x <= 420: 
-            self.side = "right"
-        if self.rect.x >= win_width - 10:
-            self.side = "left"
-        if self.side == "left":
-            self.rect.x -= self.speed
-        else:
-            self.rect.x += self.speed
 
 class Bullet(GameSprite):
     def __init__(self, player_image, player_x, player_y, size_x, size_y, player_speed):
@@ -125,11 +94,8 @@ packman = Player('hero1.png', 5, win_height - 100, 120, 48, 0, 0)
 final_sprite = GameSprite('fuel_PNG51.png', win_width - 85, win_height - 100, 80, 80)
 
 monster1 = Enemy('Plants-Vs-Zombies-PNG-Image.png', win_width - 80, 1, 80, 80, 5)
-monster2 = Enemy1('Plants-Vs-Zombies-PNG-Image.png', win_width - 80, 165, 80, 80, 5)
-monster3 = Enemy2('Plants-Vs-Zombies-PNG-Image.png', win_width - 80, 330, 80, 80, 5)
 monsters.add(monster1)
-monsters.add(monster2)
-monsters.add(monster3)
+
 
 
 
